@@ -327,11 +327,26 @@ function text_BG(layer) {
 
 	app.project.activeItem.selectedLayers[0]
 		.property("ADBE Effect Parade")
+		.property("高度")("ADBE Slider Control-0001")
+		.setValue(10);
+
+	app.project.activeItem.selectedLayers[0]
+		.property("ADBE Effect Parade")
 		.addProperty("ADBE Slider Control").name = "宽度";
 
 	app.project.activeItem.selectedLayers[0]
 		.property("ADBE Effect Parade")
+		.property("宽度")("ADBE Slider Control-0001")
+		.setValue(40);
+
+	app.project.activeItem.selectedLayers[0]
+		.property("ADBE Effect Parade")
 		.addProperty("ADBE Slider Control").name = "圆角";
+
+	app.project.activeItem.selectedLayers[0]
+		.property("ADBE Effect Parade")
+		.property("圆角")("ADBE Slider Control-0001")
+		.setValue(5);
 
 	app.project.activeItem.selectedLayers[0].property("Contents")(
 		"ADBE Vector Group"

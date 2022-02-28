@@ -114,7 +114,16 @@ function find_Layer(name) {
 app.beginUndoGroup();
 app.endUndoGroup();
 
-//
-layer.constructor.name;
 // 判断图层类型
 // 图层构造器名称
+layer.constructor.name;
+
+//选中层添加滑块控制器，设定滑块控制器的值
+app.project.activeItem.selectedLayers[0]
+	.property("ADBE Effect Parade")
+	.addProperty("ADBE Slider Control").name = "高度";
+
+app.project.activeItem.selectedLayers[0]
+	.property("ADBE Effect Parade")
+	.property("高度")("ADBE Slider Control-0001")
+	.setValue(10);
