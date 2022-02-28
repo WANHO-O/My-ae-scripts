@@ -1,6 +1,3 @@
-alert(
-	app.project.activeItem.selectedLayers[0]
-		.property("ADBE Effect Parade")
-		.property("宽度")("ADBE Slider Control-0001")
-		.setValue(40)
-);
+git config --global https.proxy http://127.0.0.1:8890
+
+git config --global https.proxy https://127.0.0.1:8890
