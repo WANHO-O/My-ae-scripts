@@ -163,6 +163,13 @@ function add_marks_UI() {
 	addMarksbutton1.preferredSize.width = 400;
 	addMarksbutton1.onClick = add_marks;
 
+	var addMarksbutton2 = addMarks.add("button", undefined, undefined, {
+		name: "button2",
+	});
+	addMarksbutton2.text = "add space";
+	addMarksbutton2.preferredSize.width = 400;
+	addMarksbutton2.onClick = add_space;
+
 	addMarks.layout.layout(true);
 	addMarks.layout.resize();
 	addMarks.onResizing = addMarks.onResize = function () {
@@ -253,6 +260,24 @@ function text_cut() {
 function add_marks() {
 	var marks = new MarkerValue(marks_comment());
 	//添加标记
+	app.executeCommand(2157);
+	find_Layer("_Text_Layer")
+		.property("Marker")
+		.setValueAtKey(
+			find_Layer("_Text_Layer").property("Marker").numKeys,
+			marks
+		);
+}
+
+function add_space() {
+	var num =
+		app.project.activeItem.selectedLayers[0].property("Marker").numKeys;
+	var text = textEdit.text.split(/\n/g);
+	text.splice(num, 0, "");
+	text = text.join("\n");
+	textEdit.text = text;
+
+	var marks = new MarkerValue(marks_comment());
 	app.executeCommand(2157);
 	find_Layer("_Text_Layer")
 		.property("Marker")
