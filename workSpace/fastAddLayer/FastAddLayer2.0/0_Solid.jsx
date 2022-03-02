@@ -1,4 +1,5 @@
 //main
+app.beginUndoGroup("Solid");
 switch (hadselctedLayersYN()) {
 	case 1:
 		addLayer();
@@ -11,6 +12,8 @@ switch (hadselctedLayersYN()) {
 	default:
 		break;
 }
+
+app.endUndoGroup();
 
 function case2() {
 	if (app.project.activeItem.selectedLayers.length === 1) {
